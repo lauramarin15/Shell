@@ -97,3 +97,17 @@ void cmd_crear(char **args) {
     printf("Archivo '%s' creado exitosamente.\n", args[1]);
     fclose(fp); // Cerrar el archivo después de crearlo
 }
+void cmd_eliminar(char **args) {
+    // Validación básica: ¿El usuario pasó el nombre del archivo a eliminar?
+    if (args[1] == NULL) {
+        printf("Error: Debes especificar un archivo para eliminar.\nUso: eliminar <nombre_archivo>\n");
+        return;
+    }
+
+    // remove(): Elimina el archivo especificado. Retorna 0 si tiene éxito, -1 si falla.
+    if (remove(args[1]) == 0) {
+        printf("Archivo '%s' eliminado exitosamente.\n", args[1]);
+    } else {
+        printf("Error: No se pudo eliminar el archivo '%s'. Verifique que exista y tenga permisos.\n", args[1]);
+    }
+}
