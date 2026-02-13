@@ -25,6 +25,7 @@ void cmd_ayuda(char **args) {
     printf("  - calc <n1> <op> <n2>: Realiza cálculos simples.\n");
     printf("  - crear <archivo>: Crea un nuevo archivo vacío.\n");
     printf("  - eliminar <archivo>: Elimina un archivo existente.\n");
+    printf("  - renombrar <nombre_actual> <nuevo_nombre>: Renombra un archivo.\n");
     printf("  - ayuda: Muestra este mensaje.\n");
     printf("  - salir: Termina la sesión.\n");
     

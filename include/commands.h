@@ -8,6 +8,7 @@
 
 #ifndef COMMANDS_H
 #define COMMANDS_H
+#include "commands.h"
 
 // --- Prototipos de Comandos ---
 
@@ -40,6 +41,11 @@ void cmd_crear(char **args);
  * @brief Elimina un archivo.
  */
 void cmd_eliminar(char **args);
+
+/**
+ * @brief Renombra un archivo.
+ */
+void cmd_renombrar(char **args);
 
 /**
  * @brief Muestra la lista de ayuda.

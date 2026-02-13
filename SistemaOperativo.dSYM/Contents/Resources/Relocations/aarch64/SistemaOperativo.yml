@@ -2,26 +2,27 @@
 triple:          'arm64-apple-darwin'
 binary-path:     SistemaOperativo
 relocations:
-  - { offset: 0x19, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002B80, symSize: 0x30 }
-  - { offset: 0x86, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002B80, symSize: 0x30 }
-  - { offset: 0xB2, size: 0x8, addend: 0x0, symName: _leer_linea, symObjAddr: 0x0, symBinAddr: 0x100002BB0, symSize: 0x70 }
-  - { offset: 0x14A, size: 0x8, addend: 0x0, symName: _parsear_linea, symObjAddr: 0x70, symBinAddr: 0x100002C20, symSize: 0x148 }
-  - { offset: 0x1B4, size: 0x8, addend: 0x0, symName: _leer_linea, symObjAddr: 0x0, symBinAddr: 0x100002BB0, symSize: 0x70 }
-  - { offset: 0x1FF, size: 0x8, addend: 0x0, symName: _num_comandos, symObjAddr: 0x0, symBinAddr: 0x100002D68, symSize: 0x8 }
-  - { offset: 0x287, size: 0x8, addend: 0x0, symName: _nombres_comandos, symObjAddr: 0x1C0, symBinAddr: 0x100008000, symSize: 0x0 }
-  - { offset: 0x2BC, size: 0x8, addend: 0x0, symName: _func_comandos, symObjAddr: 0x200, symBinAddr: 0x100008040, symSize: 0x0 }
-  - { offset: 0x2CC, size: 0x8, addend: 0x0, symName: _loop_shell, symObjAddr: 0xC4, symBinAddr: 0x100002E2C, symSize: 0x64 }
-  - { offset: 0x314, size: 0x8, addend: 0x0, symName: _ejecutar, symObjAddr: 0x8, symBinAddr: 0x100002D70, symSize: 0xBC }
-  - { offset: 0x363, size: 0x8, addend: 0x0, symName: _num_comandos, symObjAddr: 0x0, symBinAddr: 0x100002D68, symSize: 0x8 }
-  - { offset: 0x38F, size: 0x8, addend: 0x0, symName: _cmd_ayuda, symObjAddr: 0x0, symBinAddr: 0x100002E90, symSize: 0x90 }
-  - { offset: 0x4B6, size: 0x8, addend: 0x0, symName: _cmd_tiempo, symObjAddr: 0xB0, symBinAddr: 0x100002F40, symSize: 0xA0 }
-  - { offset: 0x505, size: 0x8, addend: 0x0, symName: _cmd_salir, symObjAddr: 0x90, symBinAddr: 0x100002F20, symSize: 0x20 }
-  - { offset: 0x52F, size: 0x8, addend: 0x0, symName: _cmd_ayuda, symObjAddr: 0x0, symBinAddr: 0x100002E90, symSize: 0x90 }
-  - { offset: 0x56B, size: 0x8, addend: 0x0, symName: _cmd_listar, symObjAddr: 0x0, symBinAddr: 0x100002FE0, symSize: 0xD4 }
-  - { offset: 0x952, size: 0x8, addend: 0x0, symName: _cmd_eliminar, symObjAddr: 0x240, symBinAddr: 0x100003220, symSize: 0x94 }
-  - { offset: 0x982, size: 0x8, addend: 0x0, symName: _cmd_crear, symObjAddr: 0x190, symBinAddr: 0x100003170, symSize: 0xB0 }
-  - { offset: 0x9BB, size: 0x8, addend: 0x0, symName: _cmd_leer, symObjAddr: 0xD4, symBinAddr: 0x1000030B4, symSize: 0xBC }
-  - { offset: 0xA03, size: 0x8, addend: 0x0, symName: _cmd_listar, symObjAddr: 0x0, symBinAddr: 0x100002FE0, symSize: 0xD4 }
-  - { offset: 0xA5D, size: 0x8, addend: 0x0, symName: _cmd_calc, symObjAddr: 0x0, symBinAddr: 0x1000032B4, symSize: 0x198 }
-  - { offset: 0xADA, size: 0x8, addend: 0x0, symName: _cmd_calc, symObjAddr: 0x0, symBinAddr: 0x1000032B4, symSize: 0x198 }
+  - { offset: 0x19, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002904, symSize: 0x30 }
+  - { offset: 0x86, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002904, symSize: 0x30 }
+  - { offset: 0xB2, size: 0x8, addend: 0x0, symName: _leer_linea, symObjAddr: 0x0, symBinAddr: 0x100002934, symSize: 0x70 }
+  - { offset: 0x14A, size: 0x8, addend: 0x0, symName: _parsear_linea, symObjAddr: 0x70, symBinAddr: 0x1000029A4, symSize: 0x148 }
+  - { offset: 0x1B4, size: 0x8, addend: 0x0, symName: _leer_linea, symObjAddr: 0x0, symBinAddr: 0x100002934, symSize: 0x70 }
+  - { offset: 0x1FF, size: 0x8, addend: 0x0, symName: _num_comandos, symObjAddr: 0x0, symBinAddr: 0x100002AEC, symSize: 0x8 }
+  - { offset: 0x287, size: 0x8, addend: 0x0, symName: _nombres_comandos, symObjAddr: 0x1D0, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x2BC, size: 0x8, addend: 0x0, symName: _func_comandos, symObjAddr: 0x218, symBinAddr: 0x100008048, symSize: 0x0 }
+  - { offset: 0x2CC, size: 0x8, addend: 0x0, symName: _loop_shell, symObjAddr: 0xC4, symBinAddr: 0x100002BB0, symSize: 0x64 }
+  - { offset: 0x314, size: 0x8, addend: 0x0, symName: _ejecutar, symObjAddr: 0x8, symBinAddr: 0x100002AF4, symSize: 0xBC }
+  - { offset: 0x363, size: 0x8, addend: 0x0, symName: _num_comandos, symObjAddr: 0x0, symBinAddr: 0x100002AEC, symSize: 0x8 }
+  - { offset: 0x38F, size: 0x8, addend: 0x0, symName: _cmd_ayuda, symObjAddr: 0x0, symBinAddr: 0x100002C14, symSize: 0x9C }
+  - { offset: 0x4B6, size: 0x8, addend: 0x0, symName: _cmd_tiempo, symObjAddr: 0xBC, symBinAddr: 0x100002CD0, symSize: 0xA0 }
+  - { offset: 0x505, size: 0x8, addend: 0x0, symName: _cmd_salir, symObjAddr: 0x9C, symBinAddr: 0x100002CB0, symSize: 0x20 }
+  - { offset: 0x52F, size: 0x8, addend: 0x0, symName: _cmd_ayuda, symObjAddr: 0x0, symBinAddr: 0x100002C14, symSize: 0x9C }
+  - { offset: 0x56B, size: 0x8, addend: 0x0, symName: _cmd_listar, symObjAddr: 0x0, symBinAddr: 0x100002D70, symSize: 0xD4 }
+  - { offset: 0x952, size: 0x8, addend: 0x0, symName: _cmd_renombrar, symObjAddr: 0x2D4, symBinAddr: 0x100003044, symSize: 0xCC }
+  - { offset: 0x982, size: 0x8, addend: 0x0, symName: _cmd_eliminar, symObjAddr: 0x240, symBinAddr: 0x100002FB0, symSize: 0x94 }
+  - { offset: 0x9AC, size: 0x8, addend: 0x0, symName: _cmd_crear, symObjAddr: 0x190, symBinAddr: 0x100002F00, symSize: 0xB0 }
+  - { offset: 0x9E5, size: 0x8, addend: 0x0, symName: _cmd_leer, symObjAddr: 0xD4, symBinAddr: 0x100002E44, symSize: 0xBC }
+  - { offset: 0xA2D, size: 0x8, addend: 0x0, symName: _cmd_listar, symObjAddr: 0x0, symBinAddr: 0x100002D70, symSize: 0xD4 }
+  - { offset: 0xA87, size: 0x8, addend: 0x0, symName: _cmd_calc, symObjAddr: 0x0, symBinAddr: 0x100003110, symSize: 0x198 }
+  - { offset: 0xB04, size: 0x8, addend: 0x0, symName: _cmd_calc, symObjAddr: 0x0, symBinAddr: 0x100003110, symSize: 0x198 }
 ...

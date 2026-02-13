@@ -111,3 +111,18 @@ void cmd_eliminar(char **args) {
         printf("Error: No se pudo eliminar el archivo '%s'. Verifique que exista y tenga permisos.\n", args[1]);
     }
 }
+
+void cmd_renombrar(char **args) {
+    // Validación básica: ¿El usuario pasó el nombre actual y el nuevo nombre?
+    if (args[1] == NULL || args[2] == NULL) {
+        printf("Error: Debes especificar el nombre actual y el nuevo nombre del archivo.\nUso: renombrar <nombre_actual> <nuevo_nombre>\n");
+        return;
+    }
+
+    // rename(): Cambia el nombre de un archivo. Retorna 0 si tiene éxito, -1 si falla.
+    if (rename(args[1], args[2]) == 0) {
+        printf("Archivo '%s' renombrado a '%s' exitosamente.\n", args[1], args[2]);
+    } else {
+        printf("Error: No se pudo renombrar el archivo '%s'. Verifique que exista y tenga permisos.\n", args[1]);
+    }
+}

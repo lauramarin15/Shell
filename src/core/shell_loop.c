@@ -28,6 +28,7 @@ char *nombres_comandos[] = {
     "calc",
     "crear",
     "eliminar",
+    "renombrar",
     "ayuda",
     "salir"
 };
@@ -44,6 +45,7 @@ void (*func_comandos[]) (char **) = {
     &cmd_calc,
     &cmd_crear,
     &cmd_eliminar,
+    &cmd_renombrar,
     &cmd_ayuda,
     &cmd_salir
 };
