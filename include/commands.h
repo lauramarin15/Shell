@@ -32,6 +32,11 @@ void cmd_tiempo(char **args);
 void cmd_calc(char **args);
 
 /**
+ * @brief Crea un nuevo archivo.
+ */
+void cmd_crear(char **args);
+
+/**
  * @brief Muestra la lista de ayuda.
  */
 void cmd_ayuda(char **args);

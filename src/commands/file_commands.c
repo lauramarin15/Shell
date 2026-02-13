@@ -79,3 +79,21 @@ void cmd_leer(char **args) {
     // fclose(): Es crítico cerrar los archivos para evitar fugas de recursos.
     fclose(fp);
 }
+
+void cmd_crear(char **args) {
+    // Validación básica: ¿El usuario pasó el nombre del archivo a crear?
+    if (args[1] == NULL) {
+        printf("Error: Debes especificar un nombre para el nuevo archivo.\nUso: crear <nombre_archivo>\n");
+        return;
+    }
+
+    // fopen() con modo "w" crea un nuevo archivo o sobrescribe uno existente.
+    FILE *fp = fopen(args[1], "w");
+    if (fp == NULL) {
+        printf("Error: No se pudo crear el archivo '%s'. Verifique permisos y espacio en disco.\n", args[1]);
+        return;
+    }
+
+    printf("Archivo '%s' creado exitosamente.\n", args[1]);
+    fclose(fp); // Cerrar el archivo después de crearlo
+}
