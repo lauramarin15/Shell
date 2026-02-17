@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h> // Para atof (ASCII to Float conversion)
 #include "commands.h"
+#include "colors.h"
 
 /**
  * @brief Comando CALC (Calculadora)
@@ -24,7 +25,7 @@
 void cmd_calc(char **args) {
     // 1. Validación de argumentos. Necesitamos exáctamente 3 partes después del comando.
     if (args[1] == NULL || args[2] == NULL || args[3] == NULL) {
-        printf("Uso: calc <num1> <operador> <num2>\nEjemplo: calc 5 + 3\n");
+        printf(BLUE"Uso: calc <num1> <operador> <num2>\nEjemplo: calc 5 + 3\n"RESET);
         return;
     }
 
@@ -50,17 +51,17 @@ void cmd_calc(char **args) {
         case '/': 
             // Manejo de caso borde: División por cero
             if (n2 == 0) {
-                printf("Error: División por cero no permitida.\n");
+                printf(RED"Error: División por cero no permitida.\n"RESET);
                 return;
             }
             res = n1 / n2; 
             break;
         default:
-            printf("Error: Operador '%c' no reconocido. Use +, -, * o /.\n", op);
+            printf(RED"Error: Operador '%c' no reconocido."RESET BLUE"Use +, -, * o /.\n"RESET, op);
             return;
     }
 
     // 4. Salida
     // %.2f formatea el float para mostrar solo 2 decimales.
-    printf("Resultado: %.2f\n", res);
+    printf(BLUE"Resultado: %.2f\n"RESET, res);
 }

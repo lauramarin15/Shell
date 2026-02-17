@@ -11,6 +11,7 @@
 #include <string.h>
 #include <dirent.h> // Librería POSIX para manejo de directorios
 #include "commands.h"
+#include "colors.h"
 
 /**
  * @brief Comando LISTAR (ls)
@@ -39,7 +40,7 @@ void cmd_listar(char **args) {
         closedir(d);
     } else {
         // perror(): Imprime un mensaje de error descriptivo basado en el valor global 'errno'
-        perror("Error al abrir directorio");
+        perror(RED"Error al abrir directorio"RESET);
     }
     (void)args;
 }
@@ -55,7 +56,7 @@ void cmd_listar(char **args) {
 void cmd_leer(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo?
     if (args[1] == NULL) {
-        printf("Error: Debes especificar un archivo para leer.\nUso: leer <nombre_archivo>\n");
+        printf(RED"Error: Debes especificar un archivo para leer.\n"RESET BLUE"Uso: leer <nombre_archivo>\n"RESET);
         return;
     }
 
@@ -63,7 +64,7 @@ void cmd_leer(char **args) {
     // Retorna un puntero a FILE o NULL si falla (ej. archivo no existe).
     FILE *fp = fopen(args[1], "r");
     if (fp == NULL) {
-        printf("Error: No se pudo abrir el archivo '%s'. Verifique que exista.\n", args[1]);
+        printf(RED"Error: No se pudo abrir el archivo '%s'. Verifique que exista.\n"RESET, args[1]);
         return;
     }
 
@@ -83,14 +84,14 @@ void cmd_leer(char **args) {
 void cmd_crear(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo a crear?
     if (args[1] == NULL) {
-        printf("Error: Debes especificar un nombre para el nuevo archivo.\nUso: crear <nombre_archivo>\n");
+        printf(RED"Error: Debes especificar un nombre para el nuevo archivo.\n"RESET BLUE"Uso: crear <nombre_archivo>\n"RESET);
         return;
     }
 
     // fopen() con modo "w" crea un nuevo archivo o sobrescribe uno existente.
     FILE *fp = fopen(args[1], "w");
     if (fp == NULL) {
-        printf("Error: No se pudo crear el archivo '%s'. Verifique permisos y espacio en disco.\n", args[1]);
+        printf(RED"Error: No se pudo crear el archivo '%s'. Verifique permisos y espacio en disco.\n"RESET, args[1]);
         return;
     }
 
@@ -100,7 +101,7 @@ void cmd_crear(char **args) {
 void cmd_eliminar(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo a eliminar?
     if (args[1] == NULL) {
-        printf("Error: Debes especificar un archivo para eliminar.\nUso: eliminar <nombre_archivo>\n");
+        printf(RED"Error: Debes especificar un archivo para eliminar.\n"RESET BLUE"Uso: eliminar <nombre_archivo>\n"RESET);
         return;
     }
 
@@ -108,14 +109,14 @@ void cmd_eliminar(char **args) {
     if (remove(args[1]) == 0) {
         printf("Archivo '%s' eliminado exitosamente.\n", args[1]);
     } else {
-        printf("Error: No se pudo eliminar el archivo '%s'. Verifique que exista y tenga permisos.\n", args[1]);
+        printf(RED"Error: No se pudo eliminar el archivo '%s'. Verifique que exista y tenga permisos.\n"RESET, args[1]);
     }
 }
 
 void cmd_renombrar(char **args) {
     // Validación básica: ¿El usuario pasó el nombre actual y el nuevo nombre?
     if (args[1] == NULL || args[2] == NULL) {
-        printf("Error: Debes especificar el nombre actual y el nuevo nombre del archivo.\nUso: renombrar <nombre_actual> <nuevo_nombre>\n");
+        printf(RED"Error: Debes especificar el nombre actual y el nuevo nombre del archivo.\n"RESET BLUE"Uso: renombrar <nombre_actual> <nuevo_nombre>\n"RESET);
         return;
     }
 
@@ -123,6 +124,6 @@ void cmd_renombrar(char **args) {
     if (rename(args[1], args[2]) == 0) {
         printf("Archivo '%s' renombrado a '%s' exitosamente.\n", args[1], args[2]);
     } else {
-        printf("Error: No se pudo renombrar el archivo '%s'. Verifique que exista y tenga permisos.\n", args[1]);
+        printf(RED"Error: No se pudo renombrar el archivo '%s'. Verifique que exista y tenga permisos.\n"RESET, args[1]);
     }
 }

@@ -11,6 +11,7 @@
 #include <string.h>
 #include "shell.h"
 #include "commands.h"
+#include "colors.h"
 
 /*
  * --- Registro de Comandos ---
@@ -99,7 +100,7 @@ void loop_shell() {
     int status = 1; // Variable de control del bucle
 
     do {
-        printf("EAFITos> ");
+        printf(GREEN"EAFITos> "RESET);
         
         // 1. Lectura
         linea = leer_linea();
