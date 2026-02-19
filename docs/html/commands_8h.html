@@ -196,6 +196,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Crea un nuevo archivo. </p>
+<p>Crea un nuevo archivo.</p>
+<p>Crea un archivo nuevo vacío en el sistema de archivos. Si el archivo ya existe, no modifica su contenido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] debe contener el nombre del archivo a crear. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -215,6 +223,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Elimina un archivo. </p>
+<p>Elimina un archivo.</p>
+<p>Elimina un archivo existente del sistema de archivos. Muestra un mensaje de error si el archivo no existe o si no se tienen permisos suficientes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] debe contener el nombre del archivo a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -288,6 +304,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renombra un archivo. </p>
+<p>Renombra un archivo.</p>
+<p>Cambia el nombre de un archivo existente a uno nuevo. La operación falla si el archivo origen no existe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] nombre actual del archivo. </td></tr>
+    <tr><td class="paramname">args</td><td>args[2] nuevo nombre del archivo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

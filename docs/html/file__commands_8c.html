@@ -109,11 +109,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a84b2a3d23d5741ba10a43dfb2b62ec0f" id="r_a84b2a3d23d5741ba10a43dfb2b62ec0f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a84b2a3d23d5741ba10a43dfb2b62ec0f">cmd_leer</a> (char **args)</td></tr>
 <tr class="memdesc:a84b2a3d23d5741ba10a43dfb2b62ec0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comando LEER (cat).  <br /></td></tr>
 <tr class="memitem:a0d16e3f6647bb4a5d8a4947183de9faf" id="r_a0d16e3f6647bb4a5d8a4947183de9faf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0d16e3f6647bb4a5d8a4947183de9faf">cmd_crear</a> (char **args)</td></tr>
-<tr class="memdesc:a0d16e3f6647bb4a5d8a4947183de9faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuevo archivo.  <br /></td></tr>
+<tr class="memdesc:a0d16e3f6647bb4a5d8a4947183de9faf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comando CREAR (touch).  <br /></td></tr>
 <tr class="memitem:aa3c115ab2b93ace386a2cf42400fe04d" id="r_aa3c115ab2b93ace386a2cf42400fe04d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3c115ab2b93ace386a2cf42400fe04d">cmd_eliminar</a> (char **args)</td></tr>
-<tr class="memdesc:aa3c115ab2b93ace386a2cf42400fe04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un archivo.  <br /></td></tr>
+<tr class="memdesc:aa3c115ab2b93ace386a2cf42400fe04d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comando ELIMINAR (rm).  <br /></td></tr>
 <tr class="memitem:a9981d36e969f03e0abf56d19d9aa580d" id="r_a9981d36e969f03e0abf56d19d9aa580d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9981d36e969f03e0abf56d19d9aa580d">cmd_renombrar</a> (char **args)</td></tr>
-<tr class="memdesc:a9981d36e969f03e0abf56d19d9aa580d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renombra un archivo.  <br /></td></tr>
+<tr class="memdesc:a9981d36e969f03e0abf56d19d9aa580d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comando RENOMBRAR (mv).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Comandos para manipulación y visualización de archivos. </p>
@@ -134,7 +134,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Crea un nuevo archivo. </p>
+<p>Comando CREAR (touch). </p>
+<p>Crea un nuevo archivo.</p>
+<p>Crea un archivo nuevo vacío en el sistema de archivos. Si el archivo ya existe, no modifica su contenido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] debe contener el nombre del archivo a crear. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -153,7 +161,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Elimina un archivo. </p>
+<p>Comando ELIMINAR (rm). </p>
+<p>Elimina un archivo.</p>
+<p>Elimina un archivo existente del sistema de archivos. Muestra un mensaje de error si el archivo no existe o si no se tienen permisos suficientes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] debe contener el nombre del archivo a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -226,7 +242,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renombra un archivo. </p>
+<p>Comando RENOMBRAR (mv). </p>
+<p>Renombra un archivo.</p>
+<p>Cambia el nombre de un archivo existente a uno nuevo. La operación falla si el archivo origen no existe.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>args[1] nombre actual del archivo. </td></tr>
+    <tr><td class="paramname">args</td><td>args[2] nuevo nombre del archivo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

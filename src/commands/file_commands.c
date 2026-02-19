@@ -56,7 +56,7 @@ void cmd_listar(char **args) {
 void cmd_leer(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo?
     if (args[1] == NULL) {
-        printf(RED"Error: Debes especificar un archivo para leer.\n"RESET BLUE"Uso: leer <nombre_archivo>\n"RESET);
+        printf(RED"Error: Debes especificar un archivo para leer.\n"RESET YELLOW"Uso: leer <nombre_archivo>\n"RESET);
         return;
     }
 
@@ -81,10 +81,19 @@ void cmd_leer(char **args) {
     fclose(fp);
 }
 
+
+/**
+ * @brief Comando CREAR (touch)
+ * 
+ * Crea un archivo nuevo vacío en el sistema de archivos. 
+ * Si el archivo ya existe, no modifica su contenido.
+ * 
+ * @param args args[1] debe contener el nombre del archivo a crear.
+ */
 void cmd_crear(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo a crear?
     if (args[1] == NULL) {
-        printf(RED"Error: Debes especificar un nombre para el nuevo archivo.\n"RESET BLUE"Uso: crear <nombre_archivo>\n"RESET);
+        printf(RED"Error: Debes especificar un nombre para el nuevo archivo.\n"RESET YELLOW"Uso: crear <nombre_archivo>\n"RESET);
         return;
     }
 
@@ -95,35 +104,56 @@ void cmd_crear(char **args) {
         return;
     }
 
-    printf("Archivo '%s' creado exitosamente.\n", args[1]);
+    printf(GREEN"Archivo '%s' creado exitosamente.\n"RESET, args[1]);
     fclose(fp); // Cerrar el archivo después de crearlo
 }
+
+/**
+ * @brief Comando ELIMINAR (rm)
+ * 
+ * Elimina un archivo existente del sistema de archivos.
+ * Muestra un mensaje de error si el archivo no existe
+ * o si no se tienen permisos suficientes.
+ * 
+ * @param args args[1] debe contener el nombre del archivo a eliminar.
+ */
+
 void cmd_eliminar(char **args) {
     // Validación básica: ¿El usuario pasó el nombre del archivo a eliminar?
     if (args[1] == NULL) {
-        printf(RED"Error: Debes especificar un archivo para eliminar.\n"RESET BLUE"Uso: eliminar <nombre_archivo>\n"RESET);
+        printf(RED"Error: Debes especificar un archivo para eliminar.\n"RESET YELLOW"Uso: eliminar <nombre_archivo>\n"RESET);
         return;
     }
 
     // remove(): Elimina el archivo especificado. Retorna 0 si tiene éxito, -1 si falla.
     if (remove(args[1]) == 0) {
-        printf("Archivo '%s' eliminado exitosamente.\n", args[1]);
+        printf(GREEN"Archivo '%s' eliminado exitosamente.\n"RESET, args[1]);
     } else {
-        printf(RED"Error: No se pudo eliminar el archivo '%s'. Verifique que exista y tenga permisos.\n"RESET, args[1]);
+        printf(RED"Error: No se pudo eliminar el archivo "RESET"%s"YELLOW". Verifique que exista y tenga permisos.\n"RESET, args[1]);
     }
 }
+
+/**
+ * @brief Comando RENOMBRAR (mv)
+ * 
+ * Cambia el nombre de un archivo existente a uno nuevo.
+ * La operación falla si el archivo origen no existe.
+ * 
+ * @param args args[1] nombre actual del archivo.
+ * @param args args[2] nuevo nombre del archivo.
+ */
 
 void cmd_renombrar(char **args) {
     // Validación básica: ¿El usuario pasó el nombre actual y el nuevo nombre?
     if (args[1] == NULL || args[2] == NULL) {
-        printf(RED"Error: Debes especificar el nombre actual y el nuevo nombre del archivo.\n"RESET BLUE"Uso: renombrar <nombre_actual> <nuevo_nombre>\n"RESET);
+        printf(RED"Error: Debes especificar el nombre actual y el nuevo nombre del archivo.\n"RESET YELLOW"Uso: renombrar <nombre_actual> <nuevo_nombre>\n"RESET);
         return;
     }
 
     // rename(): Cambia el nombre de un archivo. Retorna 0 si tiene éxito, -1 si falla.
     if (rename(args[1], args[2]) == 0) {
-        printf("Archivo '%s' renombrado a '%s' exitosamente.\n", args[1], args[2]);
+        printf(GREEN"Archivo '%s' renombrado a '%s' exitosamente.\n"RESET, args[1], args[2]);
     } else {
-        printf(RED"Error: No se pudo renombrar el archivo '%s'. Verifique que exista y tenga permisos.\n"RESET, args[1]);
+        printf(RED"Error: No se pudo renombrar el archivo "RESET"%s"YELLOW". Verifique que exista y tenga permisos.\n"RESET, args[1]);
     }
 }

@@ -100,7 +100,7 @@ void loop_shell() {
     int status = 1; // Variable de control del bucle
 
     do {
-        printf(GREEN"EAFITos> "RESET);
+        printf(BLUE"EAFITos> "RESET);
         
         // 1. Lectura
         linea = leer_linea();
