@@ -12,6 +12,7 @@
 #   -Iinclude: Indica que busque archivos .h en la carpeta 'include/'.
 # ==============================================================================
 
+# Colores para mejorar la legibilidad de los mensajes en la terminal.
 CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
 
